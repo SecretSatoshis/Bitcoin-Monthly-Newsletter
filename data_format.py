@@ -5,7 +5,7 @@ from io import StringIO
 
 def gather_data():
   # Fetch the data from the CoinMetrics API
-  url = f'https://coinmetrics.io/newdata/btc.csv'
+  url = f'https://raw.githubusercontent.com/coinmetrics/data/master/csv/btc.csv'
   response = requests.get(url)
   data = pd.read_csv(StringIO(response.text), low_memory=False)
   return data
